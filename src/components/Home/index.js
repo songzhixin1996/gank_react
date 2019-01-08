@@ -47,7 +47,15 @@ export default () => {
                         // thumb={item.images && item.images[0]}
                       />
                       <Card.Body>
-                        <p>{item.desc}</p>
+                        <div
+                          style={{
+                            whiteSpace: 'no-wrap',
+                            overflow: 'hidden',
+                            textOverflow: 'ellipsis'
+                          }}
+                        >
+                          {item.desc}
+                        </div>
                       </Card.Body>
                       <Card.Footer
                         content={item.source}
