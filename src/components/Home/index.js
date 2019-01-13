@@ -2,7 +2,6 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { Tabs, List, Card } from 'antd-mobile'
 import axios from 'axios'
-import CardFooter from 'antd-mobile/lib/card/CardFooter'
 
 export default () => {
   const [tabs, setTabs] = useState()
@@ -12,9 +11,6 @@ export default () => {
     console.log('render:home1 ')
     getTodayData()
   }, [])
-  useEffect(() => {
-    console.log('render:home ')
-  })
   const getTodayData = () => {
     axios.get('api/today').then(({ data }) => {
       console.log(data)

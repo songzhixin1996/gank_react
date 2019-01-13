@@ -7,6 +7,9 @@ import { useState, useEffect } from 'react'
 
 export default () => {
   const [select, setSelect] = useState('home')
+  useEffect(() => {
+    console.log('effect: ' + select)
+  })
   const navArr = [
     {
       title: 'home',
@@ -39,6 +42,7 @@ export default () => {
   const renderContent = key => {
     const name = key.toLowerCase().replace(/^\S/, s => s.toUpperCase()) //首字母大写
     const Content = contentComponents[name]
+    console.log('rendeeContent: ' + name)
     return <Content />
   }
 
