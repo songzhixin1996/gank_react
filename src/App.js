@@ -1,15 +1,18 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 import './App.css'
+import Wrap from './pages/Wrap'
 import Main from './pages/Main'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
+function App() {
+  return (
+    <div className="App">
+      <BrowserRouter>
+        {/* <Wrap /> */}
         <Main />
-      </div>
-    )
-  }
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App

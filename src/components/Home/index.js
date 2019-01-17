@@ -8,12 +8,12 @@ export default () => {
   const [data, setData] = useState(0)
   const [allData, setAllData] = useState()
   useEffect(() => {
-    console.log('render:home1 ')
+    // console.log('render:home1 ')
     getTodayData()
   }, [])
   const getTodayData = () => {
     axios.get('api/today').then(({ data }) => {
-      console.log(data)
+      // console.log(data)
       setAllData(data)
       setData(data.results)
       setTabs(data.category.map(item => ({ title: item })))

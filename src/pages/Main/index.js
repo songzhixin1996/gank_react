@@ -12,15 +12,19 @@ export default () => {
   const [open, setOpen] = useState(false)
   const [selectCat, setSelectCat] = useState('qdaily') //目录默认是qdaily，好奇心日报
   useEffect(() => {
-    console.log('effect: ' + select)
+    // console.log('effect: ' + select)
   })
   function onOpenChange() {
     setOpen(!open)
-    console.log('change')
+    // console.log('change')
   }
   const [catgory, setCatgory] = useState()
   const [subCatgory, setSubCatgory] = useState()
   let total = {}
+
+  /**
+   * 获取一级目录
+   */
   function getCatgory() {
     return new Promise((resolve, reject) => {
       axios.get('api/xiandu/categories').then(({ data }) => {
@@ -32,6 +36,9 @@ export default () => {
     })
   }
 
+  /**
+   * 获取二级目录
+   */
   function getSubCatgory(key) {
     return new Promise((resolve, reject) => {
       axios.get('api/xiandu/category/' + key).then(({ data }) => {
@@ -82,7 +89,7 @@ export default () => {
   const renderContent = key => {
     const name = key.toLowerCase().replace(/^\S/, s => s.toUpperCase()) //首字母大写
     const Content = contentComponents[name]
-    console.log('rendeeContent: ' + name)
+    // console.log('rendeeContent: ' + name)
     return <Content onOpenChange={onOpenChange} selectCat={selectCat} />
   }
 
@@ -117,6 +124,7 @@ export default () => {
           ))}
         </TabBar>
       </Drawer>
+      {/* <Route path="/content/:id" component={ContentDetail} /> */}
     </div>
   )
 }

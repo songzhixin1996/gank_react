@@ -8,8 +8,8 @@ export default props => {
   let setSelectCat = props.setSelectCat
 
   function onChange(key) {
-    console.log(key)
-    console.log(subCatgory)
+    // console.log(key)
+    // console.log(subCatgory)
   }
   return (
     <Accordion onChange={onChange}>
@@ -23,7 +23,7 @@ export default props => {
                   <List.Item
                     key={subItem._id}
                     onClick={() => {
-                      console.log(subItem.id)
+                      // console.log(subItem.id)
                       setSelectCat(subItem.id)
                     }}
                   >
